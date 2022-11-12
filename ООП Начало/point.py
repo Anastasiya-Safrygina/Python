@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 class Point:
     # Конструктор
     # self - означает обращение к полям и методам текущего класса
@@ -21,4 +24,8 @@ class Point:
     def Y(self):
         return self._y
 
-
+    # Не собственная функция класса (не имеет доступа к полям класса)
+    # Может вызываться из самого класса, без экземпляра
+    @staticmethod
+    def distance(p1, p2):
+        return sqrt((p2._x - p1._x) ** 2 + (p2._y - p1._y) ** 2)
